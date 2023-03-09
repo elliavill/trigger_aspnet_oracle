@@ -1,0 +1,77 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    ViewData["myData"] = "This is my data";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <h1>@ViewData["Title"]</h1>
+      <p>Full name: YOUR_FULL_NAME_HERE</p>
+      <p>Project 2</p>
+
+      <!-- Form for inserting a new row -->
+      <h2>Add a new row</h2>
+      <form method="post">
+          <div>
+              <label for="grade-type-name">Grade type name:</label>
+              <input type="text" id="grade-type-name" name="GradeTypeName" required>
+          </div>
+          <div>
+              <button type="submit" asp-page-handler="Add">Add</button>
+          </div>
+      </form>
+      <h3>Results</h3>
+      <p>@ViewData["myData"]</p>
+
+      <!-- Table for displaying existing rows -->
+      <h2>Existing rows</h2>
+      @if (@ViewData["myData"] != null)
+      {
+          <table>
+              <thead>
+                  <tr>
+                      <th>GRADE_TYPE_ID</th>
+                      <th>GRADE_TYPE_NAME</th>
+                      <th>CREATED_BY</th>
+                      <th>CREATED_DATE</th>
+                      <th>MODIFIED_BY</th>
+                      <th>MODIFIED_DATE</th>
+                      <th>Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  @var x = ViewData["myData"] as System.Data.DataTable;
+                  @foreach (System.Data.DataRow gradeType in x.Rows)
+                  {
+                      <tr>
+                          <td>@gradeType.GRADE_TYPE_ID</td>
+                          <td>@gradeType.GRADE_TYPE_NAME</td>
+                          <td>@gradeType.CREATED_BY</td>
+                          <td>@gradeType.CREATED_DATE.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                          <td>@gradeType.MODIFIED_BY</td>
+                          <td>@gradeType.MODIFIED_DATE?.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                          <td>
+                              <form method="post">
+                                  <input type="hidden" name="GradeTypeId" value="@gradeType.GRADE_TYPE_ID">
+                                  <button type="submit" asp-page-handler="Edit">Edit</button>
+                              </form>
+                              <form method="post">
+                                  <input type="hidden" name="GradeTypeId" value="@gradeType.GRADE_TYPE_ID">
+                                  <button type="submit" asp-page-handler="Delete">Delete</button>
+                              </form>
+                          </td>
+                      </tr>
+                  }
+              </tbody>
+          </table>
+      }
+      else
+      {
+          <p>No records found.</p>
+      }
+}
+</div>
