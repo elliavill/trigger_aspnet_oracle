@@ -1,8 +1,24 @@
 {
   "version": 2,
-  "dgSpecHash": "rVnCXr9qiQMX+8tIrCwB1vR1uB7AzT0IZrl6Ru5eyR9bHMo1NAWh7k46Mrf0st6ISsO3e2PF23LHvWAgdjTU4A==",
+  "dgSpecHash": "5XBIoLPHZSpx7ELrAaFa258vqOvt5ArrlE+s/4lhTb6Bq5hFyrGA8ptABlJreosjr9bEp1C6k3yRZlWEtuf2uA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\aureliavillyani\\Desktop\\TriggerGradeType\\TriggerGradeType.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "projectFilePath": "C:\\Users\\138772\\Desktop\\Trigger\\TriggerGradeType.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\138772\\.nuget\\packages\\oracle.manageddataaccess\\21.9.0\\oracle.manageddataaccess.21.9.0.nupkg.sha512",
+    "C:\\Users\\138772\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\138772\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
+    "C:\\Users\\138772\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Oracle.ManagedDataAccess 21.9.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Oracle.ManagedDataAccess",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }
